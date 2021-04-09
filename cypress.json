@@ -1,0 +1,9 @@
+{
+    "$schema": "http://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
+    "baseUrl": "http://demo.realworld.io/#/",
+    "apiUrl": "https://conduit.productionready.io/api/",
+    "user":{
+        "email": "jaque.agilizei@teste.com",
+        "password": "12345678"
+    }
+}
