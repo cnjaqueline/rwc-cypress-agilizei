@@ -21,3 +21,11 @@ steps:
 - script: npm run cy:run:electron
   displayName: 'Run tests on Electron'
   continueOnError: true
+
+- task: PublishTestResults@2
+  displayName: 'Exibindo resultados dos testes'
+  inputs:
+    testResultsFiles: '**/junit-*.xml'
+    mergeTestResults: true
+    testRunTitle: 'Agilizei N2'
+  continueOnError: true
