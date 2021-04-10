@@ -7,3 +7,6 @@ cypress/screenshots
 
 # outros
 .DS_Store
+
+# relatórios
+cypress/reports
