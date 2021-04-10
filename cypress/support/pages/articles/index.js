@@ -1,8 +1,12 @@
 /// <reference types="cypress" />
 
 const faker = require('faker')
-
 const el = require('./elements').ELEMENTS
+const publicacao = {
+    title: `Title-${faker.random.words(3)}`,
+    description: faker.random.words(5),
+    content: faker.lorem.paragraph()
+}
 
 import Routes from '../../routes'
 
@@ -14,9 +18,9 @@ class Articles {
 
     preencherFormulario(){
        
-        cy.get(el.inputTitle).type(`Title-${faker.random.words(3)}`)
-        cy.get(el.inputDescription).type(faker.random.words(5))
-        cy.get(el.textAreaContent).type(faker.lorem.paragraph())
+        cy.get(el.inputTitle).type(publicacao.title)
+        cy.get(el.inputDescription).type(publicacao.description)
+        cy.get(el.textAreaContent).type(publicacao.content)
         cy.get(el.inputTags).type('cypress')
     }
     
@@ -25,7 +29,14 @@ class Articles {
         cy.get(el.buttonSubmit).click()
     }
 
-    verificarSeAPuboicacaoFoiCriadaComSucesso(){
+    verificarSeAPublicacaoFoiCriadaComSucesso_gui(){
+        cy.get(el.titlePublished).should('contain', publicacao.title)
+        cy.get(el.author)
+            .first()
+            .should('contain', 'jaqueline_agilizei')
+    }
+
+    verificarSeAPublicacaoFoiCriadaComSucesso_api(){
         
         cy.wait(`@${Routes.as.postArticles}`).then((postArticlesResponse) => {
             expect(postArticlesResponse.response.statusCode).to.eq(200)

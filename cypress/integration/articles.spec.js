@@ -2,6 +2,8 @@
 
 import articles from '../support/pages/articles'
 import Routes from '../support/routes'
+
+
 context('Publicação', () => {
     // hooks -> momentos antes / depois do teste
     beforeEach(() => {
@@ -16,6 +18,7 @@ context('Publicação', () => {
         articles.submeterPublicacao()
         
         // Assert
-        articles.verificarSeAPuboicacaoFoiCriadaComSucesso()
+        articles.verificarSeAPublicacaoFoiCriadaComSucesso_gui()
+        articles.verificarSeAPublicacaoFoiCriadaComSucesso_api()
     })
 });
