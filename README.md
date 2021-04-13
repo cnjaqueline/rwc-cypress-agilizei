@@ -1,8 +1,4 @@
 
-## Repositório do Github
-
-https://github.com/cnjaqueline/rwc-cypress-agilizei/
-
 ## Repositório na Azure (link da pipeline)
 
 https://dev.azure.com/cnjaqueline/Agilizei%20Bootcamp%20N2/_build?definitionId=3
