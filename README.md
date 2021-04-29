@@ -2,7 +2,7 @@
     Teste com Cypress + CI em Azure DevOps
 </h1>
 <h3 align="center">
-    Agilizei Bootcamp - N#3    
+    Agilizei Bootcamp - N#2    
 </h3>
 
 ## 💻 Specs
